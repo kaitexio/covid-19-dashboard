@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    command: flask run --host 0.0.0.0 
+    volumes:
+      - ./api:/api
+    expose:
+      - "5000"
+    ports:
+      - "5000:5000"
+
+    
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    command: yarn run start
+    volumes:
+      - /front/node_modules
+      - ./front:/front
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
