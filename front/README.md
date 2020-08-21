@@ -1,3 +1,3 @@
-# React-Static - Blank Template
+# React-Static 
 
 To use this template, run `react-static create` and select the `blank` template.
