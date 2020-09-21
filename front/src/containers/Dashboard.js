@@ -4,22 +4,19 @@ import {makeStyles} from "@material-ui/core/styles";
 import Chart from "../components/Chart";
 import DoughnutChart from "../components/DoughnutChart";
 import {LineChart} from "../components/LineChart";
-import PrefectureTable from "../components/PrefectureTable";
 import {useRouteData} from "react-static";
 import SmallStats from "../components/smallStats";
 
 
 const useStyles = makeStyles((theme) => ({
-
     root: {
-        padding: "50px"
+        padding: theme.spacing(2),
     }
 }));
 
 function Dashboard() {
     const classes = useStyles();
     const data = useRouteData()
-    console.dir(data)
 
     return (
         <div className={classes.root}>
@@ -110,10 +107,10 @@ function Dashboard() {
                 </Grid>
                 <Grid
                     item
-                    lg={6}
-                    md={6}
-                    xl={6}
-                    xs={6}
+                    lg={12}
+                    md={12}
+                    xl={12}
+                    xs={12}
                 >
                     <LineChart posts={data.posts}/>
                 </Grid>
@@ -125,11 +122,11 @@ function Dashboard() {
                     xl={6}
                     xs={6}
                 >
-                    <PrefectureTable data={data.posts.Top10Prefectures}/>
+                    {/*<PrefectureTable data={data.posts.Top10Prefectures}/>*/}
                 </Grid>
             </Grid>
         </div>
     );
-};
+}
 
 export default Dashboard;

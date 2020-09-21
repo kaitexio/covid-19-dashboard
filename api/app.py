@@ -35,7 +35,9 @@ def index():
                                             range(len(obj["prefectures"][i]["dailyConfirmedCount"]))
                                             ]}
                     for i in range(10)
-                ]}
+                ],
+                "Updated_at": obj["updated"]
+                }
         return Response(response=json.dumps(data), status=200)
     except:
         return Response(status=400)

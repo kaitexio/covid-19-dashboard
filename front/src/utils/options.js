@@ -10,6 +10,8 @@ export const options = {
     tooltips: {
         enabled: true,
         borderWidth: 1,
+        fill: true,
+        lineTension: 0.1,
         borderColor: "#212B36",
         backgroundColor: "#212B36",
         titleFontColor: "#F9FAFB",

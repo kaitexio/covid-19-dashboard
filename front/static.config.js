@@ -5,19 +5,29 @@
 
 // Get started at https://react-static.js.org
 import axios from 'axios'
+import path from 'path'
 
 
 export default {
+    maxThreads: 1,
     getRoutes: async () => {
         const {data: posts} = await axios.get(
-            'http://api:5000/download'
+            'http://127.0.0.1:5000/download'
         )
         return [
             {
-                path: '/',
-                getData: async () => ({
-                    posts,
-                }),
-            }]
-    }
+                path:'/',
+                template: 'src/containers/Dashboard.js',
+                getData: () => ({
+                    posts
+                })
+            },
+            {
+                path: '404',
+                template: 'src/containers/NotFound.js',
+            },
+
+        ]
+    },
 }
+

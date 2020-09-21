@@ -35,8 +35,6 @@ export const LineChart = (props) => {
         datasets.push({label: content["prefecture"],  fill: false,data: content["confirmed_graph"], fillColor:color[content["id"]],strokeColor:color[content["id"]],borderColor: color[content["id"]]})
     })
 
-    console.log(datasets)
-
     const data = {
         labels: posts.date_label,
         datasets: datasets,
