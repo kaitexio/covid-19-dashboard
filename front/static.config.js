@@ -5,14 +5,12 @@
 
 // Get started at https://react-static.js.org
 import axios from 'axios'
-import path from 'path'
-
 
 export default {
     maxThreads: 1,
     getRoutes: async () => {
         const {data: posts} = await axios.get(
-            'http://127.0.0.1:5000/download'
+            'http://api:5000/download'
         )
         return [
             {
