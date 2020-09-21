@@ -1,5 +1,5 @@
 # Covid-19 Japan Dashboard
-
+![Image](https://github.com/kaitexio/covid-19-dashboard/blob/master/images/sample.png)
 ## Getting Started
 
 All service container run with :
